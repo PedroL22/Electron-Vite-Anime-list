@@ -6,11 +6,6 @@ module.exports = {
     '@electron-toolkit/eslint-config-prettier',
     'prettier',
   ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: './tsconfig.json',
-  },
   env: {
     browser: true,
     amd: true,
