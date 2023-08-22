@@ -8,12 +8,29 @@ import Placeholder from '@assets/images/placeholder.png'
 
 export const AnimeList = () => {
   const [page, setPage] = useState(0)
-  const { data, isLoading, isError } = useFetchAnimeList(page)
+  const [search, setSearch] = useState('')
+  const { data, isLoading, isError } = useFetchAnimeList(page, search)
 
   if (isLoading) {
     return (
       <Container>
-        <div className='mt-20 flex min-h-screen justify-center'>Carregando...</div>
+        <div className='mt-20 flex min-h-screen justify-center'>
+          <div
+            className='my-10 flex h-fit min-h-[35rem] w-full max-w-screen-lg flex-col items-center justify-center
+        rounded-3xl bg-gray-100 px-10 py-6 shadow-xl'
+          >
+            <div className='flex w-full justify-end'>
+              <input
+                type='text'
+                placeholder='Pesquisar'
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className='mb-6 rounded-md border-[1px] border-gray-400 p-3 outline-none focus:border-[1px] focus:border-blue-600'
+              />
+            </div>
+            Carregando...
+          </div>
+        </div>
       </Container>
     )
   }
@@ -21,7 +38,47 @@ export const AnimeList = () => {
   if (isError) {
     return (
       <Container>
-        <div className='mt-20 flex min-h-screen justify-center'>Erro</div>
+        <div className='mt-20 flex min-h-screen justify-center'>
+          <div
+            className='my-10 flex h-fit min-h-[35rem] w-full max-w-screen-lg flex-col items-center justify-center
+          rounded-3xl bg-gray-100 px-10 py-6 shadow-xl'
+          >
+            <div className='flex w-full justify-end'>
+              <input
+                type='text'
+                placeholder='Pesquisar'
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className='mb-6 rounded-md border-[1px] border-gray-400 p-3 outline-none focus:border-[1px] focus:border-blue-600'
+              />
+            </div>
+            Ocorreu um erro.
+          </div>
+        </div>
+      </Container>
+    )
+  }
+
+  if (!data?.data.length) {
+    return (
+      <Container>
+        <div className='mt-20 flex min-h-screen justify-center'>
+          <div
+            className='my-10 flex h-fit min-h-[35rem] w-full max-w-screen-lg flex-col items-center justify-center
+      rounded-3xl bg-gray-100 px-10 py-6 shadow-xl'
+          >
+            <div className='flex w-full justify-end'>
+              <input
+                type='text'
+                placeholder='Pesquisar'
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className='mb-6 rounded-md border-[1px] border-gray-400 p-3 outline-none focus:border-[1px] focus:border-blue-600'
+              />
+            </div>
+            Sem resultados.
+          </div>
+        </div>
       </Container>
     )
   }
@@ -31,8 +88,18 @@ export const AnimeList = () => {
       <div className='mt-20 flex min-h-screen justify-center'>
         <div
           className='my-10 flex h-fit min-h-[35rem] w-full max-w-screen-lg flex-col items-center justify-center
-        rounded-3xl bg-gray-100 p-16 shadow-xl'
+        rounded-3xl bg-gray-100 px-10 py-6 shadow-xl'
         >
+          <div className='flex w-full justify-end'>
+            <input
+              type='text'
+              placeholder='Pesquisar'
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className='mb-6 rounded-md border-[1px] border-gray-400 p-3 outline-none focus:border-[1px] focus:border-blue-600'
+            />
+          </div>
+
           <table className='w-full table-fixed border-[1px] border-gray-400'>
             <thead>
               <tr>
@@ -50,7 +117,7 @@ export const AnimeList = () => {
                     <img
                       src={anime.attributes.coverImage?.original ?? Placeholder}
                       alt={`capa do anime ${anime.attributes.canonicalTitle}`}
-                      className='mx-auto flex h-32 w-44 object-cover'
+                      className='mx-auto flex h-32 w-48 object-cover'
                     />
                   </td>
                   <td className='border-[1px] border-gray-400 text-center'>{anime.attributes.canonicalTitle}</td>
@@ -61,7 +128,8 @@ export const AnimeList = () => {
               ))}
             </tbody>
           </table>
-          <div className='-mb-8 mt-6 flex space-x-3'>
+
+          <div className='flex space-x-3 pt-6'>
             <button
               onClick={() => setPage(0)}
               className='bg-gray-300 p-4 transition-all hover:bg-gray-400 active:bg-gray-500'
