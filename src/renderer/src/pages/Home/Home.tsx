@@ -1,8 +1,12 @@
+import { useNavigate } from 'react-router-dom'
+
 import { Container } from '@layout/Container'
 
 import { Button } from '@components/Home/Button'
 
 export const Home = () => {
+  const navigate = useNavigate()
+
   return (
     <Container>
       <div className='flex h-screen flex-col items-center justify-center'>
@@ -21,6 +25,7 @@ export const Home = () => {
             bgColor='bg-blue-700'
             bgHover='bg-blue-800'
             bgActive='bg-blue-900'
+            onClick={() => navigate('/anime-list')}
           />
         </div>
       </div>

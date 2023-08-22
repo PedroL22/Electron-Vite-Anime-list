@@ -1,7 +1,13 @@
+import { useState } from 'react'
+
 import { useFetchAnimeList } from '@hooks/anime'
+
 import { Container } from '@layout/Container'
 
+import Placeholder from '@assets/images/placeholder.png'
+
 export const AnimeList = () => {
+  const [page, setPage] = useState(1)
   const { data, isLoading, isError } = useFetchAnimeList()
 
   if (isLoading) {
@@ -42,8 +48,8 @@ export const AnimeList = () => {
                 <tr key={anime.id}>
                   <td>
                     <img
-                      src={anime.attributes.coverImage?.original}
-                      alt=''
+                      src={anime.attributes.coverImage?.original ?? Placeholder}
+                      alt={`capa do anime ${anime.attributes.canonicalTitle}`}
                       className='mx-auto flex h-32 w-44 object-cover'
                     />
                   </td>
