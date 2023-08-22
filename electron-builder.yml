@@ -1,5 +1,5 @@
-appId: com.electron.app
-productName: aprendendo-electron
+appId: com.pedrolucena22.lista-de-animes
+productName: Lista de animes
 directories:
   buildResources: build
 files:
@@ -12,7 +12,7 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: aprendendo-electron
+  executableName: Lista de animes
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
