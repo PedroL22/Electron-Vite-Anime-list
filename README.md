@@ -1,6 +1,6 @@
-# aprendendo-electron
+# Electron Vite Anime list
 
-An Electron application with React and TypeScript
+An Electron application with React, TypeScript, and React Query.
 
 ## Recommended IDE Setup
 

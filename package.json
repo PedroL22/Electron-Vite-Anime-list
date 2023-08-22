@@ -1,8 +1,8 @@
 {
-  "name": "lista-de-animes",
+  "name": "electron-vite-anime-list",
   "private": true,
   "version": "1.0.0",
-  "description": "An Electron application with React and TypeScript",
+  "description": "An Electron application with React, TypeScript, and React Query.",
   "main": "./out/main/index.js",
   "author": "Pedro Lucena <pedrocontact22@gmail.com>",
   "homepage": "https://www.electronjs.org",
