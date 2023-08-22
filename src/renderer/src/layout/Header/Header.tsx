@@ -14,7 +14,7 @@ export const Header = () => {
           to='/anime-list'
           className={({ isActive }) => (isActive ? 'border-b-[1px] border-b-white' : '')}
         >
-          Lista de animes
+          List
         </NavLink>
       </nav>
     </header>

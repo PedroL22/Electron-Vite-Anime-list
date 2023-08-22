@@ -22,13 +22,13 @@ export const AnimeList = () => {
             <div className='flex w-full justify-end'>
               <input
                 type='text'
-                placeholder='Pesquisar'
+                placeholder='Search'
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className='mb-6 rounded-md border-[1px] border-gray-400 p-3 outline-none focus:border-[1px] focus:border-blue-600'
               />
             </div>
-            Carregando...
+            Loading...
           </div>
         </div>
       </Container>
@@ -46,13 +46,13 @@ export const AnimeList = () => {
             <div className='flex w-full justify-end'>
               <input
                 type='text'
-                placeholder='Pesquisar'
+                placeholder='Search'
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className='mb-6 rounded-md border-[1px] border-gray-400 p-3 outline-none focus:border-[1px] focus:border-blue-600'
               />
             </div>
-            Ocorreu um erro.
+            An error has occurred.
           </div>
         </div>
       </Container>
@@ -93,7 +93,7 @@ export const AnimeList = () => {
           <div className='flex w-full justify-end'>
             <input
               type='text'
-              placeholder='Pesquisar'
+              placeholder='Search'
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className='mb-6 rounded-md border-[1px] border-gray-400 p-3 outline-none focus:border-[1px] focus:border-blue-600'
@@ -103,7 +103,7 @@ export const AnimeList = () => {
           <table className='w-full table-fixed border-[1px] border-gray-400'>
             <thead>
               <tr>
-                <th className='border-[1px] border-gray-400'>Cover</th>
+                <th className='border-[1px] border-gray-400'>Cover image</th>
                 <th className='border-[1px] border-gray-400'>Title</th>
                 <th className='border-[1px] border-gray-400'>Type</th>
                 <th className='border-[1px] border-gray-400'>Start Date</th>
@@ -116,7 +116,7 @@ export const AnimeList = () => {
                   <td>
                     <img
                       src={anime.attributes.coverImage?.original ?? Placeholder}
-                      alt={`capa do anime ${anime.attributes.canonicalTitle}`}
+                      alt={`${anime.attributes.canonicalTitle} cover image`}
                       className='mx-auto flex h-32 w-48 object-cover'
                     />
                   </td>
