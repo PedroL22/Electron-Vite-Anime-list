@@ -3,5 +3,4 @@ dist
 out
 *.log*
 *.tsbuildinfo
-*.js
-*.d.ts
+index.js

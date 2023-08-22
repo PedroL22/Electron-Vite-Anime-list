@@ -1,3 +1,3 @@
 export const Home = () => {
-  return <div>ola mundo</div>
+  return <div className='bg-red-500'>ola mundo</div>
 }
