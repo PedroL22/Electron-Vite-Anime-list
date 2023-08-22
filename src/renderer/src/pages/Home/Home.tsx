@@ -1,3 +1,3 @@
 export const Home = () => {
-  return <div className='bg-red-500'>ola mundo</div>
+  return <div className='h-80 bg-gray-300'>Página inicial</div>
 }
