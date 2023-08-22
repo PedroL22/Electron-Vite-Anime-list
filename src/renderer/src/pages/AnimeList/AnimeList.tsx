@@ -7,13 +7,13 @@ import { Container } from '@layout/Container'
 import Placeholder from '@assets/images/placeholder.png'
 
 export const AnimeList = () => {
-  const [page, setPage] = useState(1)
-  const { data, isLoading, isError } = useFetchAnimeList()
+  const [page, setPage] = useState(0)
+  const { data, isLoading, isError } = useFetchAnimeList(page)
 
   if (isLoading) {
     return (
       <Container>
-        <div className='mt-28 flex min-h-screen justify-center'>Carregando...</div>
+        <div className='mt-20 flex min-h-screen justify-center'>Carregando...</div>
       </Container>
     )
   }
@@ -21,17 +21,17 @@ export const AnimeList = () => {
   if (isError) {
     return (
       <Container>
-        <div className='mt-28 flex min-h-screen justify-center'>Erro</div>
+        <div className='mt-20 flex min-h-screen justify-center'>Erro</div>
       </Container>
     )
   }
 
   return (
     <Container>
-      <div className='mt-28 flex min-h-screen justify-center'>
+      <div className='mt-20 flex min-h-screen justify-center'>
         <div
-          className='flex h-fit min-h-[35rem] w-full max-w-screen-lg items-center justify-center rounded-3xl bg-gray-100
-        p-16 shadow-xl'
+          className='my-10 flex h-fit min-h-[35rem] w-full max-w-screen-lg flex-col items-center justify-center
+        rounded-3xl bg-gray-100 p-16 shadow-xl'
         >
           <table className='w-full table-fixed border-[1px] border-gray-400'>
             <thead>
@@ -61,6 +61,68 @@ export const AnimeList = () => {
               ))}
             </tbody>
           </table>
+          <div className='-mb-8 mt-6 flex space-x-3'>
+            <button
+              onClick={() => setPage(0)}
+              className='bg-gray-300 p-4 transition-all hover:bg-gray-400 active:bg-gray-500'
+            >
+              1
+            </button>
+            <button
+              onClick={() => setPage(1)}
+              className='bg-gray-300 p-4 transition-all hover:bg-gray-400 active:bg-gray-500'
+            >
+              2
+            </button>
+            <button
+              onClick={() => setPage(2)}
+              className='bg-gray-300 p-4 transition-all hover:bg-gray-400 active:bg-gray-500'
+            >
+              3
+            </button>
+            <button
+              onClick={() => setPage(3)}
+              className='bg-gray-300 p-4 transition-all hover:bg-gray-400 active:bg-gray-500'
+            >
+              4
+            </button>
+            <button
+              onClick={() => setPage(4)}
+              className='bg-gray-300 p-4 transition-all hover:bg-gray-400 active:bg-gray-500'
+            >
+              5
+            </button>
+            <button
+              onClick={() => setPage(5)}
+              className='bg-gray-300 p-4 transition-all hover:bg-gray-400 active:bg-gray-500'
+            >
+              6
+            </button>
+            <button
+              onClick={() => setPage(6)}
+              className='bg-gray-300 p-4 transition-all hover:bg-gray-400 active:bg-gray-500'
+            >
+              7
+            </button>
+            <button
+              onClick={() => setPage(7)}
+              className='bg-gray-300 p-4 transition-all hover:bg-gray-400 active:bg-gray-500'
+            >
+              8
+            </button>
+            <button
+              onClick={() => setPage(8)}
+              className='bg-gray-300 p-4 transition-all hover:bg-gray-400 active:bg-gray-500'
+            >
+              9
+            </button>
+            <button
+              onClick={() => setPage(9)}
+              className='bg-gray-300 p-4 transition-all hover:bg-gray-400 active:bg-gray-500'
+            >
+              10
+            </button>
+          </div>
         </div>
       </div>
     </Container>
