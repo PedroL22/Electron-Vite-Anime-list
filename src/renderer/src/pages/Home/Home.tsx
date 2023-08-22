@@ -13,7 +13,6 @@ export const Home = () => {
           <h1 className='bg-gradient-to-r from-cyan-400 to-blue-700 bg-clip-text text-8xl font-medium text-transparent'>
             Lista de Animes
           </h1>
-          <button></button>
         </div>
 
         <div className='mt-8'>

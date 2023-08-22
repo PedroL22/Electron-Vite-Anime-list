@@ -1,11 +1,21 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export const Header = () => {
   return (
-    <header className='flex h-10 w-screen justify-center bg-blue-600 text-lg font-medium text-white'>
+    <header className='fixed flex h-20 w-screen justify-center bg-blue-600 text-xl font-medium text-white'>
       <nav className='flex w-full max-w-screen-xl items-center justify-between px-4'>
-        <Link to='/'>Home</Link>
-        <Link to='/anime-list'>Lista de animes</Link>
+        <NavLink
+          to='/'
+          className={({ isActive }) => (isActive ? 'border-b-[1px] border-b-white' : '')}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to='/anime-list'
+          className={({ isActive }) => (isActive ? 'border-b-[1px] border-b-white' : '')}
+        >
+          Lista de animes
+        </NavLink>
       </nav>
     </header>
   )
