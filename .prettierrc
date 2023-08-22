@@ -14,5 +14,7 @@
   "vueIndentScriptAndStyle": true,
   "endOfLine": "auto",
   "embeddedLanguageFormatting": "auto",
-  "singleAttributePerLine": true
+  "singleAttributePerLine": true,
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "pluginSearchDirs": false
 }
