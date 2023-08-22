@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 export const Header = () => {
   return (
-    <header className='fixed flex h-20 w-screen justify-center bg-blue-600 text-xl font-medium text-white'>
+    <header className='absolute flex h-20 w-full justify-center bg-blue-600 text-xl font-medium text-white'>
       <nav className='flex w-full max-w-screen-xl items-center justify-between px-4'>
         <NavLink
           to='/'
