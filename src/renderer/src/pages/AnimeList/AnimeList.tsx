@@ -106,8 +106,10 @@ export const AnimeList = () => {
                 <th className='border-[1px] border-gray-400'>Cover image</th>
                 <th className='border-[1px] border-gray-400'>Title</th>
                 <th className='border-[1px] border-gray-400'>Type</th>
+                <th className='border-[1px] border-gray-400'>Episode count</th>
+                <th className='border-[1px] border-gray-400'>Age rating</th>
+                <th className='border-[1px] border-gray-400'>Average rating</th>
                 <th className='border-[1px] border-gray-400'>Start Date</th>
-                <th className='border-[1px] border-gray-400'>End Date</th>
               </tr>
             </thead>
             <tbody>
@@ -122,8 +124,10 @@ export const AnimeList = () => {
                   </td>
                   <td className='border-[1px] border-gray-400 text-center'>{anime.attributes.canonicalTitle}</td>
                   <td className='border-[1px] border-gray-400 text-center'>{anime.attributes.showType}</td>
+                  <td className='border-[1px] border-gray-400 text-center'>{anime.attributes.episodeCount}</td>
+                  <td className='border-[1px] border-gray-400 text-center'>{anime.attributes.ageRatingGuide}</td>
+                  <td className='border-[1px] border-gray-400 text-center'>{anime.attributes.averageRating}%</td>
                   <td className='border-[1px] border-gray-400 text-center'>{anime.attributes.startDate}</td>
-                  <td className='border-[1px] border-gray-400 text-center'>{anime.attributes.endDate}</td>
                 </tr>
               ))}
             </tbody>
