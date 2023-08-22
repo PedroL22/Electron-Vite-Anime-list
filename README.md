@@ -1,6 +1,6 @@
 # Electron Vite Anime list
 
-An Electron application with React, TypeScript, and React Query.
+An anime list desktop application made with Electron-Vite, React, TypeScript, React Query, and Kitsu API.
 
 ## Recommended IDE Setup
 
